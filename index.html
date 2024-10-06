@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,20 +25,32 @@
         h1 {
             color: #333333; /* Dark grey text for the heading */
         }
-        video {
-            width: 640px; /* Set video width */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 10px; /* Rounded corners for video */
+        iframe {
+            width: 640px; /* Set iframe width */
+            height: 480px; /* Set iframe height */
+            border: none; /* Remove border */
+            border-radius: 10px; /* Rounded corners for iframe */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>My Video</h1>
-        <video controls>
-            <source src="https://drive.google.com/uc?export=download&id=FILE_ID" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <h1>Celestial_Duo</h1>
+        <p>Project Video</p>
+        <iframe id="video" src="https://drive.google.com/file/d/1hFQ9jtFIeU-hJfaIT04uwLj96jh2Mq4S/preview" allow="autoplay" allowfullscreen></iframe>
     </div>
+    <script>
+        const iframe = document.getElementById('video');
+        iframe.addEventListener('load', () => {
+            const videoElement = iframe.contentWindow.document.querySelector('video');
+
+            if (videoElement) {
+                videoElement.addEventListener('ended', () => {
+                    videoElement.currentTime = 0; // Reset video to start
+                    videoElement.play(); // Restart video
+                });
+            }
+        });
+    </script>
 </body>
 </html>
