@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light grey background */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Font style */
+        }
+        .container {
+            text-align: center; /* Center text */
+            background-color: #ffffff; /* White background for the container */
+            padding: 20px; /* Add padding */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        h1 {
+            color: #333333; /* Dark grey text for the heading */
+        }
+        video {
+            width: 640px; /* Set video width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Rounded corners for video */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Video</h1>
+        <video controls>
+            <source src="https://drive.google.com/uc?export=download&id=FILE_ID" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+</html>
